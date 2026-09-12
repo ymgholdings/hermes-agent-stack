@@ -1,0 +1,45 @@
+model_list:
+  - model_name: claude-3-5-sonnet
+    litellm_params:
+      model: openrouter/anthropic/claude-3.5-sonnet
+      api_key: os.environ/OPENROUTER_API_KEY
+  - model_name: gpt-4o
+    litellm_params:
+      model: openrouter/openai/gpt-4o
+      api_key: os.environ/OPENROUTER_API_KEY
+  - model_name: poolside-laguna-s
+    litellm_params:
+      model: openrouter/poolside/laguna-s-2.1:free
+      api_key: os.environ/OPENROUTER_API_KEY
+  - model_name: poolside-laguna-xs
+    litellm_params:
+      model: openrouter/poolside/laguna-xs-2.1:free
+      api_key: os.environ/OPENROUTER_API_KEY
+  - model_name: nemotron-4-340b-free
+    litellm_params:
+      model: openrouter/nvidia/nemotron-4-340b-instruct:free
+      api_key: os.environ/OPENROUTER_API_KEY
+  - model_name: nemotron-3-ultra-free
+    litellm_params:
+      model: openrouter/nvidia/nemotron-3-ultra:free
+      api_key: os.environ/OPENROUTER_API_KEY
+  - model_name: cohere-north-mini-free
+    litellm_params:
+      model: openrouter/cohere/north-mini-code:free
+      api_key: os.environ/OPENROUTER_API_KEY
+  - model_name: gemma-2-9b-free
+    litellm_params:
+      model: openrouter/google/gemma-2-9b-it:free
+      api_key: os.environ/OPENROUTER_API_KEY
+  - model_name: gemma-4-31b-free
+    litellm_params:
+      model: openrouter/google/gemma-4-31b:free
+      api_key: os.environ/OPENROUTER_API_KEY
+  - model_name: openrouter-free
+    litellm_params:
+      model: openrouter/openrouter/free
+      api_key: os.environ/OPENROUTER_API_KEY
+
+general_settings:
+  master_key: os.environ/LITELLM_MASTER_KEY
+  drop_params: true
