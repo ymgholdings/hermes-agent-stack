@@ -1,4 +1,3 @@
-version: '3.8'
 services:
   litellm:
     image: ghcr.io/berriai/litellm:main-v1.60.0
@@ -17,6 +16,9 @@ services:
       - OPENAI_API_BASE=http://litellm:4000/v1
       - OPENAI_API_KEY=${LITELLM_MASTER_KEY}
       - DEFAULT_MODEL=claude-3-5-sonnet
+      - HERMES_WEBUI_STATE_DIR=/data
+    volumes:
+      - hermes_webui_data:/data
     depends_on: [litellm]
   postgres:
     image: postgres:16-alpine
@@ -35,3 +37,4 @@ services:
     ports: ["127.0.0.1:6379:6379"]
 volumes:
   postgres_data:
+  hermes_webui_data:
