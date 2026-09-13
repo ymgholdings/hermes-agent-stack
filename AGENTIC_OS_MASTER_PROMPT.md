@@ -14,7 +14,7 @@ Design, then build, a minimal working v1 of the "Agentic OS": a small app that l
 - v1 scope is deliberately small: one task type end to end (e.g. "generate a function plus tests from a spec"), not the full production pipeline. No speculative abstractions, no unrequested features.
 - Do not modify litellm_config.yaml, docker-compose.yml, or .env. They are already correct and in production. If you believe a change is needed, flag it and explain why instead of editing it.
 - No new paid API keys, no new cloud services, nothing outside this box, without asking me first.
-- Cost discipline: default all implementation-tier work to the cheap/free-tier models in the matrix. Only use the claude-3-5-sonnet/gpt-4o tier for orchestration itself. Opus tier is not authorized for this project yet.
+- Cost discipline: default all implementation-tier work to the cheap/free-tier models in the matrix. Only use the claude-sonnet-4.5/gpt-4o tier for orchestration itself. Opus tier is not authorized for this project yet.
 
 ## First deliverable — stop here and wait for my go-ahead
 A short design doc (not code) covering:

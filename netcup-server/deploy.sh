@@ -35,10 +35,11 @@ docker compose up -d
 
 echo "== Phase 5: Claude Code CLI environment =="
 sudo npm install -g @anthropic-ai/claude-code
-cat << 'BASHRC' >> ~/.bashrc
+SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
+cat << BASHRC >> ~/.bashrc
 export ANTHROPIC_BASE_URL="http://127.0.0.1:4000"
-export ANTHROPIC_AUTH_TOKEN="$(grep LITELLM_MASTER_KEY .env | cut -d= -f2)"
-export ANTHROPIC_MODEL="claude-3-5-sonnet"
+export ANTHROPIC_AUTH_TOKEN="\$(grep LITELLM_MASTER_KEY ${SCRIPT_DIR}/.env | cut -d= -f2)"
+export ANTHROPIC_MODEL="claude-sonnet-4.5"
 export ANTHROPIC_SMALL_FAST_MODEL="poolside-laguna-s"
 BASHRC
 
