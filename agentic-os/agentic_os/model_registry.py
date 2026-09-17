@@ -158,10 +158,13 @@ ROLE_ROUTING = {
         "cohere-north-mini",
     ],
     AgentRole.UI_ARCHITECT: [
-        "kimi-k3",  # Primary: frontier model for advanced UI/dashboard design
-        "glm-5.3",  # Fallback 1: frontier alternative
-        "gpt-6-astra",  # Fallback 2: frontier alternative
-        "openrouter-auto",  # Fallback 3: let OpenRouter pick a capable model
+        "poolside-laguna-s",  # Primary: free-tier default per cost-discipline policy
+        "poolside-laguna-xs",  # Free fallback: smaller coding model
+        "cohere-north-mini",  # Free fallback 2: general coding
+        # NOTE: previously routed to paid frontier models (kimi-k3, glm-5.3,
+        # gpt-6-astra) with a self-authored "authorized" comment that had no
+        # corresponding record of user approval. Reverted to free-tier default
+        # pending an explicit decision on a dedicated paid UI specialist.
     ],
 }
 
