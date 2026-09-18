@@ -147,7 +147,14 @@ ROLE_ROUTING = {
         "cohere-north-mini",  # Free fallback 2: general coding
     ],
     AgentRole.DEBUGGER: [
-        "gpt-4o",  # Primary: strong reasoning for bug detection
+        # EXCEPTION (logged, per cost-discipline policy): Debugger
+        # intentionally defaults to a paid model rather than free-tier-first.
+        # Bug detection and code review benefit disproportionately from
+        # stronger reasoning than implementation or test-generation — a
+        # missed bug here ships broken code, where a missed edge case in a
+        # free-tier draft gets caught downstream anyway. Approved exception,
+        # decided 2026-09-18.
+        "gpt-4o",  # Primary: strong reasoning for bug detection (paid, by design)
         "nemotron-ultra",  # Free fallback: 1M context, strong reasoning
         "nemotron-lightning",  # Free fallback 2: fast, large context
         "nemotron-super",  # Free fallback 3: balanced
